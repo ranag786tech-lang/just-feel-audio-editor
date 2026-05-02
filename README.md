@@ -69,12 +69,12 @@ Because editing audio shouldn't be complicated. Just upload, feel the music, mak
 ## 🚀 **Live Demo**
 
 <p align="center">
-  <a href="YOUR_GITHUB_LINK_HERE">
+  <a href="https://ranag786tech-lang.github.io/just-feel-audio-editor/">
     <img src="https://img.shields.io/badge/🎵-Try%20Just%20Feel%20Live!-FF6B6B?style=for-the-badge&logo=github" alt="Try Live"/>
   </a>
 </p>
 
-> **Note:** Once you host on GitHub Pages, replace `YOUR_GITHUB_LINK_HERE` with your actual link!
+> **Note:** Once you host on GitHub Pages, replace `https://ranag786tech-lang.github.io/just-feel-audio-editor/` with your actual link!
 
 ---
 
