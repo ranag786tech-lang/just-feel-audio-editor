@@ -632,13 +632,49 @@
         }
 
         // Pitch Control
-        function setPitch() {
-            const pitch = document.getElementById('pitchSlider').value;
-            document.getElementById('pitchValue').textContent = pitch + ' semitones';
-            // Pitch shifting would require more complex implementation
-            alert('🎵 Pitch feature will be available in next update!');
-        }
+        // Replace the setPitch() function with this:
 
+// Add this at the top with other variables
+let pitchShift = 0;
+
+// Replace the old setPitch function
+function setPitch() {
+    const pitch = document.getElementById('pitchSlider').value;
+    document.getElementById('pitchValue').textContent = pitch + ' semitones';
+    pitchShift = parseFloat(pitch);
+    
+    if (isPlaying) {
+        // Restart playback with new pitch
+        pauseAudio();
+        playAudio();
+    }
+}
+
+// Update playAudio function - find this part:
+// sourceNode.playbackRate.value = parseFloat(document.getElementById('speedSlider').value);
+
+// Replace with:
+sourceNode.playbackRate.value = parseFloat(document.getElementById('speedSlider').value) * Math.pow(2, pitchShift / 12);
+
+// Add this new function for better pitch control
+function applyPitchShift(audioBuffer, semitones) {
+    const factor = Math.pow(2, semitones / 12);
+    const newSampleRate = audioBuffer.sampleRate * factor;
+    const newLength = Math.floor(audioBuffer.length / factor);
+    
+    const offlineCtx = new OfflineAudioContext(
+        audioBuffer.numberOfChannels,
+        newLength,
+        newSampleRate
+    );
+    
+    const source = offlineCtx.createBufferSource();
+    source.buffer = audioBuffer;
+    source.connect(offlineCtx.destination);
+    source.start();
+    
+    return offlineCtx.startRendering();
+}
         // Trim Functions
         function updateTrim() {
             const start = parseFloat(document.getElementById('trimStart').value);
