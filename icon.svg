@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="50%" style="stop-color:#764ba2"/>
+      <stop offset="100%" style="stop-color:#f093fb"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B6B"/>
+      <stop offset="50%" style="stop-color:#4ECDC4"/>
+      <stop offset="100%" style="stop-color:#FFE66D"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bg)"/>
+  
+  <!-- Outer Ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="10,10"/>
+  
+  <!-- Sound Waves -->
+  <g transform="translate(256,256)">
+    <!-- Left waves -->
+    <path d="M-30,-60 Q-50,-80 -40,-100 Q-30,-120 -20,-100 Q-10,-80 -30,-60" 
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-50,-40 Q-80,-60 -70,-90 Q-60,-110 -40,-90 Q-30,-70 -50,-40" 
+          fill="none" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Right waves -->
+    <path d="M30,-60 Q50,-80 40,-100 Q30,-120 20,-100 Q10,-80 30,-60" 
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M50,-40 Q80,-60 70,-90 Q60,-110 40,-90 Q30,-70 50,-40" 
+          fill="none" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Center waveform -->
+    <path d="M-80,20 L-60,10 L-40,30 L-20,5 L0,25 L20,0 L40,20 L60,10 L80,25" 
+          fill="none" stroke="url(#wave)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="d" 
+               values="M-80,20 L-60,10 L-40,30 L-20,5 L0,25 L20,0 L40,20 L60,10 L80,25;
+                       M-80,25 L-60,5 L-40,25 L-20,15 L0,5 L20,20 L40,10 L60,25 L80,15;
+                       M-80,20 L-60,10 L-40,30 L-20,5 L0,25 L20,0 L40,20 L60,10 L80,25" 
+               dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Play button icon -->
+    <circle cx="0" cy="60" r="25" fill="white" opacity="0.9">
+      <animate attributeName="r" values="25;28;25" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <polygon points="-8,48 -8,72 15,60" fill="#764ba2"/>
+  </g>
+  
+  <!-- Stars -->
+  <g fill="white" opacity="0.8">
+    <circle cx="80" cy="80" r="3" fill="#FFE66D">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="420" cy="100" r="4" fill="#4ECDC4">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="380" r="3" fill="#FF6B6B">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="90" cy="350" r="4" fill="#FFE66D">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Heart -->
+  <g transform="translate(256,380)">
+    <path d="M0,15 C-5,5 -20,0 -15,-10 C-10,-20 0,-15 0,-5 C0,-15 10,-20 15,-10 C20,0 5,5 0,15Z" 
+          fill="#FF6B6B" opacity="0.9">
+      <animate attributeName="transform" type="scale" values="1;1.2;1" dur="1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>
