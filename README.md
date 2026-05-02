@@ -88,7 +88,7 @@ Because editing audio shouldn't be complicated. Just upload, feel the music, mak
 ### Method 2: Clone Repository
 ```bash
 # Clone this beautiful project
-git clone https://github.com/YOUR_USERNAME/just-feel-audio-editor.git
+gh repo clone ranag786tech-lang/just-feel-audio-editor
 
 # Open the folder
 cd just-feel-audio-editor
